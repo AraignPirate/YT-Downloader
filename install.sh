@@ -1,4 +1,5 @@
 #!/bin/bash
+termux-setup-storage
 echo; echo "  [!] Updating.."
 apt-get update &>> .log
 echo; echo "  [!] Installing Dependencies.."
