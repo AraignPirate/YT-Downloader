@@ -1,0 +1,173 @@
+DOWAUD="/data/data/com.termux/files/home/storage/music/"
+if [[ -d $DOWAUD ]]
+then
+        :
+else
+        DOWAUD="$FPATH/Audios/"
+fi
+AUDFOR=(
+[1]="best" 
+[2]="aac" 
+[3]="flac"
+[4]="mp3" 
+[5]="m4a" 
+[6]="opus" 
+[7]="vorbis" 
+[8]="wav"
+)
+menuaudio()
+{
+echo; echo -e "$G     [1] $C Video Url To Convert In Audio  $G      [2] $C Video Url File To Convert In Audio         "
+echo; echo -e "$G     [3] $C Back                           $G      [0] $C Exit"
+echo; echo -ne "$G ${prompt[0]} "
+read choice
+case $choice in 
+        1) audioDownloadbylink ;;
+        2) audioDownloadbyfile;;
+	3) banner && menu ;;
+        0) clear && exit 0 ;;   
+        *) echo; echo -e "$R ${prompt[2]} $C Wrong choice enterer " && sleep 0.8 && banner && menuaudio;;
+esac
+
+}
+
+audioDownloadbylink()
+{
+echo; echo -e "$G ${prompt[1]} $C Enter the Url : "
+echo; echo -ne "$G ${prompt[0]} "
+read link
+echo; echo -e "$G ${prompt[1]} $C Getting Available Formats For Audio.."
+#####################################
+youtube-dl -F $link &> tmp 
+####################################
+if [[ $? -gt 0 ]] 
+then
+	echo; echo -e "$R ${prompt[2]} $C Url is Not Valid !!!!" && sleep 3 && banner && menuaudio
+fi
+echo
+for i in ${AUDFOR[@]}
+do 
+    echo -e "$G ${prompt[1]} $C $i"
+done 
+echo; echo -ne "$G ${prompt[0]} $C Enter The Format :$G "
+read format
+############################
+download $format $link
+############################
+read y
+}
+audioDownloadbyfile()
+{
+	echo; echo -ne "$G ${prompt[0]} $C Enter The File Location Containing Url's :$G "
+	read urlfile
+	if [[ -f $urlfile ]]
+	then
+		echo; echo -e "$G ${prompt[1]} $C Getting The formats Available.."
+		echo
+	for i in ${AUDFOR[@]}
+		do
+    			echo -e "$G ${prompt[1]} $C $i"
+		done
+		echo; echo -ne "$G ${prompt[1]} $C Enter The Format:$G "
+		read format
+		echo; echo -e "$G ${prompt[1]} $C Processing Downloads.... "
+		downloadfromfile $format $urlfile
+	else
+		echo; echo -e "$R ${prompt[2]} $C File Not Found at Given Location "
+		read y && banner && menuaudio
+	fi
+}
+download()
+{
+	interval=1
+	{
+ 		trap "exit" SIGUSR1
+ 		sleep $interval; sleep $interval
+ 		while true
+ 		do
+ 		echo -n '.' # Use dots.
+ 		sleep $interval
+ 		done; } & # Start a progress bar as a background process.
+	pid=$!
+	trap " kill -USR1 $pid; wait $pid &> /dev/null " EXIT # To handle ^C.
+	echo; echo -ne "$G ${prompt[1]} $C Downloading"
+        youtube-dl -x --audio-format $1 $2 --exec "mv {} $DOWAUD " &> /dev/null  ; check $? $pid   
+	echo; echo;echo -e "$G ${prompt[1]} $C Download Completed !!!"
+	kill -USR1 $pid &> /dev/null
+	wait $pid # Stop the progress bar.
+	trap EXIT
+	echo; echo -e "$G ${prompt[1]} $C Saved At $DOWAUD"
+	sleep 2
+	read y
+}
+check()
+{
+if [[ $1 -gt 0 ]] 
+then
+        kill -USR1 $2 &> /dev/null
+        wait $2 # Stop the progress bar.
+	echo; echo -e "$R ${prompt[2]} $C Wrong format Type !!!!"; read y && banner && menuvideo
+fi
+}
+downloadfromfile()
+{
+count=1
+while read urls
+do
+	interval=1
+        {
+                trap "exit" SIGUSR1
+                sleep $interval; sleep $interval
+                while true
+                do
+                echo -n '.' # Use dots.
+                sleep $interval
+                done; } & # Start a progress bar as a background process.
+        pid=$!
+        trap "echo !; kill -USR1 $pid; wait $pid" EXIT # To handle ^C &> /dev/null.
+	echo ; echo -ne "$G ${prompt[1]} $C Url[$count] Downloading"
+        youtube-dl -x --audio-format $1 $urls  --exec "mv {} $DOWAUD" &> /dev/null  ; check2 $? 
+        kill -USR1 $pid
+        wait $pid # Stop the progress bar.
+        trap EXIT
+        sleep 0.5
+	((count++))
+done < $2
+echo; echo -e "$G ${prompt[1]} $C All The Audios Are Downloaded.."
+read y
+}
+check2()
+{
+if [[ $1 -gt 0 ]] 
+then
+        echo; echo -e "$R ${prompt[2]} $C Wrong format Type !!!!"
+else
+	echo; echo -e "$G ${prompt[1]} $C Download Completed !!!"	
+        echo; echo -e "$G ${prompt[1]} $C Saved At $DOWAUD"
+fi
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

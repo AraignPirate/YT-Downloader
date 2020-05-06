@@ -1,0 +1,157 @@
+DOWVID="/data/data/com.termux/files/home/storage/movies/"
+if [[ -d $DOWVID ]]
+then 
+	:
+else
+	DOWVID="$FPATH/Videos/"
+fi
+menuvideo()
+{
+echo; echo -e "$G     [1] $C Video Url    $G      [2] $C Video Url File          "
+echo; echo -e "$G     [3] $C Back         $G      [0] $C Exit"
+echo; echo -ne "$G ${prompt[0]} "
+read choice
+case $choice in 
+        1) videoDownloadbylink ;;
+        2) videoDownloadbyfile;;
+	3) banner && menu;;
+        0) clear && exit 0 ;;   
+        *) echo; echo -e "$R ${prompt[2]} $C Wrong choice enterer " && sleep 0.8 && banner && menuvideo;;
+esac
+
+}
+
+videoDownloadbylink()
+{
+echo; echo -e "$G ${prompt[1]} $C Enter the Url : "
+echo; echo -ne "$G ${prompt[0]} "
+read link
+echo
+echo -e "$G ${prompt[1]} $C Getting Available Formats For Video.."
+############################
+youtube-dl -F $link &> tmp  
+############################
+if [[ $? -gt 0 ]] 
+then
+	echo; echo -e "$R ${prompt[2]} $C Url is Not Valid !!!!" && sleep 3 && banner && menuvideo
+else
+	echo 
+	cat tmp | sed '1d' |sed '1d' > tmp2
+	while read line
+	do 
+		echo -e "$G ${prompt[1]} $C $line"
+	done < tmp2	
+	echo; echo -ne "$G ${prompt[0]} $C Enter The Format Code :$G "
+	read format
+	download $format $link
+fi
+}
+videoDownloadbyfile()
+{
+	echo; echo -ne "$G ${prompt[0]} $C Enter The File Location Containing Url's :$G "
+	read urlfile
+	if [[ -f $urlfile ]]
+	then
+		echo; echo -e "$G ${prompt[1]} $C Default Format is [mp4] [360p] "
+		echo; echo -e "$G ${prompt[1]} $C Processing Downloads.... "
+		downloadfromfile $urlfile
+	else
+		echo; echo -e "$R ${prompt[2]} $C File Not Found at Given Location "
+		read y && banner && menuvideo
+	fi
+}
+download()
+{
+	interval=1
+	{
+ 		trap "exit" SIGUSR1
+ 		sleep $interval; sleep $interval
+ 		while true
+ 		do
+ 		echo -n '.' # Use dots.
+ 		sleep $interval
+ 		done; } & # Start a progress bar as a background process.
+	pid=$!
+	trap "echo !; kill -USR1 $pid; wait $pid" EXIT # To handle ^C.
+	echo; echo -ne "$G ${prompt[1]} $C Downloading"
+	youtube-dl -f $1 $2 --exec "mv {} $DOWVID"  &>tmp  ; checkvid $? $pid   
+	echo; echo;echo -e "$G ${prompt[1]} $C Download Completed !!!"
+	kill -USR1 $pid
+	wait $pid # Stop the progress bar.
+	trap EXIT
+	echo; echo -e "$G ${prompt[1]} $C Saved At $DOWVID"
+	sleep 2
+	read y
+}
+checkvid()
+{
+if [[ $1 -gt 0 ]] 
+then
+        kill -USR1 $2
+        wait $2 # Stop the progress bar.
+	echo -e "$R ${prompt[2]} $C Wrong format Type !!!!"; read y && banner && menuvideo
+fi
+}
+downloadfromfile()
+{
+count=1
+while read urls
+do
+	interval=1
+        {
+                trap "exit" SIGUSR1
+                sleep $interval; sleep $interval
+                while true
+                do
+                echo -n '.' # Use dots.
+                sleep $interval
+                done; } & # Start a progress bar as a background process.
+        pid=$!
+        trap "echo !; kill -USR1 $pid; wait $pid" EXIT  &> tmp# To handle ^C.
+	echo ; echo -ne "$G ${prompt[1]} $C Url[$count] Downloading"
+        youtube-dl -f 18 $urls --exec "mv {} $DOWVID"  &> tmp  ; checkvid2 $? 
+        kill -USR1 $pid &> tmp
+        wait $pid # Stop the progress bar.
+        trap EXIT
+        sleep 0.5
+	((count++))
+done < $1
+echo; echo -e "$G ${prompt[1]} $C All Files Are Downloaded"
+read y
+}
+checkvid2()
+{
+if [[ $1 -gt 0 ]] 
+then
+        echo; echo -e "$R ${prompt[2]} $C Wrong format Type !!!!"
+else
+	echo; echo -e "$G ${prompt[1]} $C Download Completed !!!"	
+        echo; echo -e "$G ${prompt[1]} $C Saved At $DOWVID"
+fi
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

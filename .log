@@ -1,0 +1,178 @@
+Ign:2 https://dl.bintray.com/grimler/game-packages-24 games InRelease
+Ign:3 https://dl.bintray.com/grimler/science-packages-24 science InRelease
+Ign:1 https://dl.bintray.com/termux/termux-packages-24 stable InRelease
+Get:5 https://dl.bintray.com/grimler/game-packages-24 games Release [5344 B]
+Hit:5 https://dl.bintray.com/grimler/game-packages-24 games Release
+Get:7 https://dl.bintray.com/grimler/science-packages-24 science Release [5348 B]
+Get:4 https://dl.bintray.com/termux/termux-packages-24 stable Release [6061 B]
+Get:8 https://dl.bintray.com/grimler/science-packages-24 science Release.gpg [475 B]
+Get:9 https://dl.bintray.com/termux/termux-packages-24 stable Release.gpg [821 B]
+Get:10 https://dl.bintray.com/termux/termux-packages-24 stable/main aarch64 Packages [115 kB]
+Fetched 128 kB in 57s (2209 B/s)
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+git is already the newest version (2.26.2).
+0 upgraded, 0 newly installed, 0 to remove and 14 not upgraded.
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  gdbm libffi libyaml
+The following NEW packages will be installed:
+  gdbm libffi libyaml ruby
+0 upgraded, 4 newly installed, 0 to remove and 14 not upgraded.
+Need to get 4051 kB of archives.
+After this operation, 23.6 MB of additional disk space will be used.
+Get:1 https://dl.bintray.com/termux/termux-packages-24 stable/main aarch64 gdbm aarch64 1.18.1-3 [103 kB]
+Get:2 https://dl.bintray.com/termux/termux-packages-24 stable/main aarch64 libffi aarch64 3.3 [28.4 kB]
+Get:3 https://dl.bintray.com/termux/termux-packages-24 stable/main aarch64 libyaml aarch64 0.2.3 [43.0 kB]
+Get:4 https://dl.bintray.com/termux/termux-packages-24 stable/main aarch64 ruby aarch64 2.7.1 [3877 kB]
+Fetched 4051 kB in 19min 18s (3496 B/s)
+
+Selecting previously unselected package gdbm.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 3850 files and directories currently installed.)
+Preparing to unpack .../gdbm_1.18.1-3_aarch64.deb ...
+Unpacking gdbm (1.18.1-3) ...
+Selecting previously unselected package libffi.
+Preparing to unpack .../libffi_3.3_aarch64.deb ...
+Unpacking libffi (3.3) ...
+Selecting previously unselected package libyaml.
+Preparing to unpack .../libyaml_0.2.3_aarch64.deb ...
+Unpacking libyaml (0.2.3) ...
+Selecting previously unselected package ruby.
+Preparing to unpack .../ruby_2.7.1_aarch64.deb ...
+Unpacking ruby (2.7.1) ...
+Setting up gdbm (1.18.1-3) ...
+Setting up libffi (3.3) ...
+Setting up libyaml (0.2.3) ...
+Setting up ruby (2.7.1) ...
+Cloning into 'lolcat'...
+/bin/youtube-dl: Read-only file system
+chmod: cannot access '/bin/youtube-dl': No such file or directory
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  fontconfig freetype fribidi glib harfbuzz libass libdav1d libgnutls
+  libgraphite libidn2 libmp3lame libnettle libogg libopus libpng libsoxr
+  libvidstab libvorbis libvpx libx264 libx265 libxml2 ttf-dejavu xvidcore
+The following NEW packages will be installed:
+  ffmpeg fontconfig freetype fribidi glib harfbuzz libass libdav1d libgnutls
+  libgraphite libidn2 libmp3lame libnettle libogg libopus libpng libsoxr
+  libvidstab libvorbis libvpx libx264 libx265 libxml2 ttf-dejavu xvidcore
+0 upgraded, 25 newly installed, 0 to remove and 14 not upgraded.
+Need to get 18.1 MB of archives.
+After this operation, 73.0 MB of additional disk space will be used.
+Get:1 https://dl.bintray.com/termux/termux-packages-24 stable/main aarch64 libpng aarch64 1.6.37-2 [189 kB]
+Get:2 https://dl.bintray.com/termux/termux-packages-24 stable/main aarch64 freetype aarch64 2.10.1-1 [363 kB]
+Get:3 https://dl.bintray.com/termux/termux-packages-24 stable/main aarch64 libxml2 aarch64 2.9.10-2 [823 kB]
+Get:4 https://dl.bintray.com/termux/termux-packages-24 stable/main aarch64 ttf-dejavu all 2.37-7 [2471 kB]
+Get:5 https://dl.bintray.com/termux/termux-packages-24 stable/main aarch64 fontconfig aarch64 2.13.1-5 [103 kB]
+Get:6 https://dl.bintray.com/termux/termux-packages-24 stable/main aarch64 glib aarch64 2.64.2 [1032 kB]
+Get:7 https://dl.bintray.com/termux/termux-packages-24 stable/main aarch64 fribidi aarch64 1.0.9 [63.4 kB]
+Get:8 https://dl.bintray.com/termux/termux-packages-24 stable/main aarch64 libgraphite aarch64 1.3.14 [74.0 kB]
+Get:9 https://dl.bintray.com/termux/termux-packages-24 stable/main aarch64 harfbuzz aarch64 2.6.4-5 [262 kB]
+Get:10 https://dl.bintray.com/termux/termux-packages-24 stable/main aarch64 libass aarch64 0.14.0-3 [66.2 kB]
+Get:11 https://dl.bintray.com/termux/termux-packages-24 stable/main aarch64 libdav1d aarch64 0.4.0 [192 kB]
+Get:12 https://dl.bintray.com/termux/termux-packages-24 stable/main aarch64 libsoxr aarch64 0.1.3-2 [208 kB]
+Get:13 https://dl.bintray.com/termux/termux-packages-24 stable/main aarch64 libx264 aarch64 20190215-1 [363 kB]
+Get:14 https://dl.bintray.com/termux/termux-packages-24 stable/main aarch64 libx265 aarch64 3.3 [324 kB]
+Get:15 https://dl.bintray.com/termux/termux-packages-24 stable/main aarch64 xvidcore aarch64 1.3.7 [127 kB]
+Get:16 https://dl.bintray.com/termux/termux-packages-24 stable/main aarch64 libogg aarch64 1.3.4 [188 kB]
+Ign:2 https://dl.bintray.com/grimler/game-packages-24 games InRelease
+Ign:3 https://dl.bintray.com/grimler/science-packages-24 science InRelease
+Ign:1 https://dl.bintray.com/termux/termux-packages-24 stable InRelease
+Get:5 https://dl.bintray.com/grimler/game-packages-24 games Release [5344 B]
+Hit:5 https://dl.bintray.com/grimler/game-packages-24 games Release
+Get:7 https://dl.bintray.com/grimler/science-packages-24 science Release [6191 B]
+Get:4 https://dl.bintray.com/termux/termux-packages-24 stable Release [6061 B]
+Get:8 https://dl.bintray.com/grimler/science-packages-24 science Release.gpg [475 B]
+Get:9 https://dl.bintray.com/termux/termux-packages-24 stable Release.gpg [821 B]
+Get:10 https://dl.bintray.com/grimler/science-packages-24 science/stable aarch64 Packages [9489 B]
+Get:11 https://dl.bintray.com/termux/termux-packages-24 stable/main aarch64 Packages [111 kB]
+Fetched 134 kB in 1min 50s (1207 B/s)
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+git is already the newest version (2.26.2).
+0 upgraded, 0 newly installed, 0 to remove and 14 not upgraded.
+Reading package lists...
+Building dependency tree...
+Reading state information...
+ruby is already the newest version (2.7.1).
+0 upgraded, 0 newly installed, 0 to remove and 14 not upgraded.
+Cloning into 'lolcat'...
+/bin/youtube-dl: Read-only file system
+chmod: cannot access '/bin/youtube-dl': No such file or directory
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  fontconfig freetype fribidi glib harfbuzz libass libdav1d libgnutls
+  libgraphite libidn2 libmp3lame libnettle libogg libopus libpng libsoxr
+  libvidstab libvorbis libvpx libx264 libx265 libxml2 ttf-dejavu xvidcore
+The following NEW packages will be installed:
+  ffmpeg fontconfig freetype fribidi glib harfbuzz libass libdav1d libgnutls
+  libgraphite libidn2 libmp3lame libnettle libogg libopus libpng libsoxr
+  libvidstab libvorbis libvpx libx264 libx265 libxml2 ttf-dejavu xvidcore
+0 upgraded, 25 newly installed, 0 to remove and 14 not upgraded.
+Need to get 11.4 MB/18.1 MB of archives.
+After this operation, 73.0 MB of additional disk space will be used.
+Get:1 https://dl.bintray.com/termux/termux-packages-24 stable/main aarch64 libogg aarch64 1.3.4 [188 kB]
+Get:2 https://dl.bintray.com/termux/termux-packages-24 stable/main aarch64 libvorbis aarch64 1.3.6-2 [263 kB]
+Err:2 https://dl.bintray.com/termux/termux-packages-24 stable/main aarch64 libvorbis aarch64 1.3.6-2
+  OpenSSL SSL_read: error:14095126:SSL routines:ssl3_read_n:unexpected eof while reading, errno 0
+Get:3 https://dl.bintray.com/termux/termux-packages-24 stable/main aarch64 libmp3lame aarch64 3.100-2 [109 kB]
+Get:4 https://dl.bintray.com/termux/termux-packages-24 stable/main aarch64 libopus aarch64 1.3.1-3 [169 kB]
+Get:5 https://dl.bintray.com/termux/termux-packages-24 stable/main aarch64 libvpx aarch64 1.8.2 [578 kB]
+Get:6 https://dl.bintray.com/termux/termux-packages-24 stable/main aarch64 libnettle aarch64 3.6 [348 kB]
+Get:7 https://dl.bintray.com/termux/termux-packages-24 stable/main aarch64 libidn2 aarch64 2.3.0-1 [82.6 kB]
+Err:7 https://dl.bintray.com/termux/termux-packages-24 stable/main aarch64 libidn2 aarch64 2.3.0-1
+  OpenSSL SSL_read: error:14095126:SSL routines:ssl3_read_n:unexpected eof while reading, errno 0
+Get:8 https://dl.bintray.com/termux/termux-packages-24 stable/main aarch64 libgnutls aarch64 3.6.13-1 [1859 kB]
+Get:9 https://dl.bintray.com/termux/termux-packages-24 stable/main aarch64 libvidstab aarch64 1.1.0 [187 kB]
+Get:10 https://dl.bintray.com/termux/termux-packages-24 stable/main aarch64 ffmpeg aarch64 4.2.2-5 [7620 kB]
+Err:10 https://dl.bintray.com/termux/termux-packages-24 stable/main aarch64 ffmpeg aarch64 4.2.2-5
+  OpenSSL SSL_read: error:14095126:SSL routines:ssl3_read_n:unexpected eof while reading, errno 0
+Fetched 3437 kB in 40min 12s (1424 B/s)
+E: Failed to fetch https://dl.bintray.com/termux/termux-packages-24/aarch64/libvorbis_1.3.6-2_aarch64.deb  OpenSSL SSL_read: error:14095126:SSL routines:ssl3_read_n:unexpected eof while reading, errno 0
+E: Failed to fetch https://dl.bintray.com/termux/termux-packages-24/aarch64/libidn2_2.3.0-1_aarch64.deb  OpenSSL SSL_read: error:14095126:SSL routines:ssl3_read_n:unexpected eof while reading, errno 0
+E: Failed to fetch https://dl.bintray.com/termux/termux-packages-24/aarch64/ffmpeg_4.2.2-5_aarch64.deb  OpenSSL SSL_read: error:14095126:SSL routines:ssl3_read_n:unexpected eof while reading, errno 0
+E: Unable to fetch some archives, maybe run apt-get update or try with --fix-missing?
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  file libao libflac libid3tag libltdl libmad libmp3lame libogg libopus libpng
+  libsndfile libsoxr libvorbis opusfile pulseaudio speexdsp
+The following NEW packages will be installed:
+  file libao libflac libid3tag libltdl libmad libmp3lame libogg libopus libpng
+  libsndfile libsoxr libvorbis opusfile pulseaudio sox speexdsp
+0 upgraded, 17 newly installed, 0 to remove and 14 not upgraded.
+Need to get 2262 kB/3124 kB of archives.
+After this operation, 19.5 MB of additional disk space will be used.
+Get:1 https://dl.bintray.com/termux/termux-packages-24 stable/main aarch64 file aarch64 5.38 [288 kB]
+Get:2 https://dl.bintray.com/termux/termux-packages-24 stable/main aarch64 libltdl aarch64 2.4.6-8 [12.3 kB]
+Get:3 https://dl.bintray.com/termux/termux-packages-24 stable/main aarch64 libflac aarch64 1.3.3 [238 kB]
+Get:4 https://dl.bintray.com/termux/termux-packages-24 stable/main aarch64 libvorbis aarch64 1.3.6-2 [263 kB]
+Get:5 https://dl.bintray.com/termux/termux-packages-24 stable/main aarch64 libsndfile aarch64 1.0.29~pre1-3 [191 kB]
+Get:6 https://dl.bintray.com/termux/termux-packages-24 stable/main aarch64 speexdsp aarch64 1.2.0-1 [34.8 kB]
+Get:7 https://dl.bintray.com/termux/termux-packages-24 stable/main aarch64 pulseaudio aarch64 13.0-2 [657 kB]
+Err:7 https://dl.bintray.com/termux/termux-packages-24 stable/main aarch64 pulseaudio aarch64 13.0-2
+  Operation too slow. Less than 10 bytes/sec transferred the last 120 seconds
+Get:8 https://dl.bintray.com/termux/termux-packages-24 stable/main aarch64 libao aarch64 1.2.2-2 [34.1 kB]
+Get:9 https://dl.bintray.com/termux/termux-packages-24 stable/main aarch64 libid3tag aarch64 0.15.1b-3 [26.2 kB]
+Get:10 https://dl.bintray.com/termux/termux-packages-24 stable/main aarch64 libmad aarch64 0.15.1b-2 [54.2 kB]
+Get:11 https://dl.bintray.com/termux/termux-packages-24 stable/main aarch64 opusfile aarch64 0.11-2 [41.3 kB]
+Get:12 https://dl.bintray.com/termux/termux-packages-24 stable/main aarch64 sox aarch64 14.4.2-17 [422 kB]
+Fetched 1605 kB in 16min 29s (1621 B/s)
+E: Failed to fetch https://dl.bintray.com/termux/termux-packages-24/aarch64/pulseaudio_13.0-2_aarch64.deb  Operation too slow. Less than 10 bytes/sec transferred the last 120 seconds
+E: Unable to fetch some archives, maybe run apt-get update or try with --fix-missing?
+Reading package lists...
+Building dependency tree...
+Reading state information...
+sed is already the newest version (4.8).
+0 upgraded, 0 newly installed, 0 to remove and 14 not upgraded.
