@@ -22,6 +22,7 @@ echo; echo "     [!] Player"
 apt-get install sox -y &>> .log
 apt-get install sed -y &>> .log
 echo; echo "  [!] Checking installation"
+
 for i in gem lolcat git youtube-dl sed ffmpeg ffprobe sox
 do 
 	which $i  &> /dev/null
